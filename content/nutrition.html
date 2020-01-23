@@ -9,17 +9,18 @@
 
     <style>
         table {
+            /* try with one margin set to 0 and the other at auto. */
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         td,
         th {
             border-width: 1px;
             border-style: dashed;
             padding: 5px;
+            /*Notice the margin doesn't do anythign to our display */
             margin: 100px;
-            text-align: center;
         }
     </style>
 </head>
@@ -27,14 +28,37 @@
 <body>
 
     <header>
-        <h1>Wired Brain Coffee</h1>
-        <h2>Nutrition Information</h2>
+        <picture style="float:left">
+            
+            <!--
+            <source type="image/jpeg" srcset="wired-brain-coffee-logo-250.jpg 250w, wired-brain-coffee-logo.jpg 500w"
+                sizes="(max-width: 500px) 15vw, 25vw" />
+            <source type="image/png" srcset="wired-brain-coffee-logo-250.png 250w, wired-brain-coffee-logo.png 500w"
+                sizes="(max-width: 500px) 15vw, 25vw" />
+            
+-->
+            
+            <source media="(min-width:750px" srcset="wired-brain-coffee-logo-250.jpg 250w, wired-brain-coffee-logo.jpg 500w"
+                sizes="(max-width: 1000px) 25vw, (min-width: 1000px) 15vw" />
+            <source srcset="wired-brain-coffee-logo-250.png 250w, wired-brain-coffee-logo.png 500w"
+                sizes="(max-width: 500px) 15vw, 25vw" />
+                
+            <img src="wired-brain-coffee-logo.png" alt="Wired Brain Coffee Logo" />
+        </picture>
+
+        <div style="float:left; margin-left:15px">
+            <h1>Wired Brain Coffee</h1>
+            <h2>Nutrition Information</h2>
+        </div>
+        <div style="clear:both" />
     </header>
 
     <section id="nutrition">
         <p>
-            Wired Brain Coffee believes it is important for you to know what you put in your body. To that end, here is the nutritional information for our products.
+            Wired Brain Coffee believes it is important for you to know what you put in your body.
+            To that end, here is the nutritional information for our products.
         </p>
+
         <table>
             <caption>Wired Brain Nutrition Information</caption>
             <thead>
@@ -89,6 +113,7 @@
                 </tr>
             </tfoot>
         </table>
+
     </section>
 
     <footer>
